@@ -81,8 +81,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Reset inputs
         pName.value = '';
-        pQty.value = '1';
-        pPrice.value = '0';
+        pQty.value = '';
+        pPrice.value = '';
         pName.focus();
     });
 
