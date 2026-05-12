@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savdo Kalkulyatori</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Savdo Kalkulyatori</h1>
+            <p>Mahsulotlarni qo'shing, daromadni hisoblang va chek chiqaring</p>
+        </header>
+
+        <main class="main-content">
+            <!-- Form Section -->
+            <section class="form-panel">
+                <div class="form-group">
+                    <label for="p-name">Mahsulot nomi</label>
+                    <input type="text" id="p-name" placeholder="Masalan: Olma">
+                </div>
+                <div class="form-group">
+                    <label for="p-qty">Dona</label>
+                    <input type="number" id="p-qty" value="1" min="1">
+                </div>
+                <div class="form-group">
+                    <label for="p-price">Sotuv narxi (so'm)</label>
+                    <input type="number" id="p-price" value="0" min="0">
+                </div>
+                <button class="add-btn" id="add-item">Qo'shish</button>
+            </section>
+
+            <!-- Receipt Section -->
+            <section class="receipt-panel" id="receipt-to-print">
+                <div class="receipt-header">
+                    <h2>XARID CHEKI</h2>
+                    <p id="current-time">--.--.2026 --:--</p>
+                </div>
+
+                <div class="receipt-divider"></div>
+
+                <table class="receipt-table">
+                    <thead>
+                        <tr>
+                            <th>Nomi</th>
+                            <th class="num">Dona</th>
+                            <th class="num">Narxi</th>
+                            <th class="num">Summa</th>
+                        </tr>
+                    </thead>
+                    <tbody id="items-list">
+                        <!-- Items will be added here -->
+                    </tbody>
+                </table>
+
+                <div class="receipt-footer">
+                    <div class="total-row">
+                        <span>Jami summa:</span>
+                        <span id="total-amount">0 so'm</span>
+                    </div>
+
+                    <div class="receipt-divider"></div>
+
+                    <div class="contact-info">
+                        <p style="margin-top: 10px; font-style: italic;">Xaridingiz uchun rahmat!</p>
+                    </div>
+
+                    <div class="receipt-actions">
+                        <button class="btn-outline" onclick="window.print()">Chekni chiqarish (Print)</button>
+                        <button class="btn-error" id="clear-all">Tozalash</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
